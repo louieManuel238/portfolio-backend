@@ -22,7 +22,7 @@ const validateKeys = (req, res, next) => {
 
 app.use('/user', userRoute);
 app.use('/works', workRoute);
-app.use('/skill', skillRoute);
+// app.use('/skill', skillRoute);
 app.get("/",(_req,res)=>{
     res.send("API for PERSONAL WEBSITE")
 })
