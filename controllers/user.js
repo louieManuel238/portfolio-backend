@@ -5,7 +5,7 @@ const db = knex(knexConfig);
 export const getUserInfo = async (req, res) =>{
     try{
         const user = await db.select("id", "first_name", "last_name",
-             "tagline", "about", "email")
+             "tagline", "about", "email", "title")
         .from('users')
         .where('id', req.params.id).first();
         if(user.length<1) throw new Error("User not found");

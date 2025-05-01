@@ -31,6 +31,10 @@ export const getWorkExperienceByID = async (req, res) => {
         })
         .first();
         if(work.length<1) throw new Error("No Work Experience Found");
+        const tech = (await db.select("tech").from("techstacks")
+            .innerJoin("work_techs", "work_techs.tech_id", "techstacks.id")
+            .where("work_id", work.id)).map(item => item.tech);
+            work["tech"] = tech;
         res.status(200).json(work);
     }catch(error){
         res.status(500).json({"Error Retriving Data":error});
