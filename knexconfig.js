@@ -16,10 +16,10 @@ import "dotenv/config";
 export default {
     client: "mssql",
     connection: {
-      database: "PersonalWebsite",
-      server: "personal-website.database.windows.net",
-      user: "CloudSAf56b6455",
-      password: "BACKEND-wEBSITE",
+      database: process.env.DB_NAME,
+      server: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
       options:{
         encrypt: true,
         port: 1433,

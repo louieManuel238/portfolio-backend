@@ -3,6 +3,7 @@ import cors from 'cors';
 import 'dotenv/config';
 import userRoute from'./routes/user.js';
 import workRoute from './routes/work.js';
+import projectRoute from './routes/project.js';
 
 const VALID_API_KEYS = [process.env.API_KEY];
 const PORT = process.env.PORT || 8080;
@@ -22,7 +23,7 @@ const validateKeys = (req, res, next) => {
 
 app.use('/user', userRoute);
 app.use('/works', workRoute);
-// app.use('/skill', skillRoute);
+app.use('/projects', projectRoute);
 app.get("/",(_req,res)=>{
     res.send("API for PERSONAL WEBSITE")
 })
