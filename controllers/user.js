@@ -8,6 +8,7 @@ export const getUserInfo = async (req, res) =>{
              "tagline", "about", "email", "title")
         .from('users')
         .where('id', req.params.id).first();
+        console.log(user)
         if(user.length<1) throw new Error("User not found");
         res.json(user);
     }catch(error){

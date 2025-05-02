@@ -3,12 +3,29 @@ import "dotenv/config";
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
+// export default {
+//   client: "mysql2",
+//   connection: {
+//     host: process.env.DB_HOST,
+//     database: process.env.DB_NAME,
+//     user: process.env.DB_USER,
+//     password: process.env.DB_PASSWORD,
+//   },
+// };
+
 export default {
-  client: "mysql2",
-  connection: {
-    host: process.env.DB_HOST,
-    database: process.env.DB_NAME,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-  },
-};
+    client: "mssql",
+    connection: {
+      database: "PersonalWebsite",
+      server: "personal-website.database.windows.net",
+      user: "CloudSAf56b6455",
+      password: "BACKEND-wEBSITE",
+      options:{
+        encrypt: true,
+        port: 1433,
+        trustServerCertificate: false,
+        enableArithAbort: true, // Required by the driver
+        connectionTimeout: 30000
+      }
+    },
+  };
