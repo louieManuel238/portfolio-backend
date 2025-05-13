@@ -25,7 +25,7 @@ export default {
         port: 1433,
         trustServerCertificate: false,
         enableArithAbort: true, // Required by the driver
-        connectionTimeout: 30000
+        
       }
     },
   };
